@@ -1,0 +1,4 @@
+.layer{
+  width: 100%;
+  background: linear-gradient(45deg, rgba(30,37,54,1) 60%, rgba(255,255,255,0) 100%);
+}

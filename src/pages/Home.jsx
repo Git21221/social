@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Button from "../components/button/Button";
+import Button from "../components/button/Button.jsx";
+import Input from "../components/Input/Input.jsx";
 
 const Home = () => {
   return (
     <div className="dhiwise-navigation">
       <h1>Homepage</h1>
-      <Button content="Submit" width="140px" />
+      <Button content="Submit" className="text-white bg-violet-500 rounded-md" />
+      <Input placeholder="Enter your name" type="text" />
       {/* <ul>
         <li>
           <Link to="/login">Login</Link>
