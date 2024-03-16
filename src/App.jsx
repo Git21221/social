@@ -1,12 +1,12 @@
-import './App.css'
+import "./App.css";
+import { Outlet } from "react-router-dom";
 
 function App() {
-
   return (
     <>
-      <h1>Saikat</h1>
+      <Outlet />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
