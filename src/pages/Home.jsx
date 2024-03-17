@@ -9,6 +9,8 @@ const Home = () => {
       <h1>Homepage</h1>
       <Button content="Submit" className="text-white bg-violet-500 rounded-md" />
       <Input placeholder="Enter your name" type="text" />
+      <Link to='/login'>Login</Link>
+      <Link to='/signup'>signup</Link>
       {/* <ul>
         <li>
           <Link to="/login">Login</Link>
