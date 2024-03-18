@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function Signup() {
   return (
     <>
-      <div className="box flex bg-[url(/background.jpg)] bg-no-repeat bg-cover bg-center h-screen">
+      <div className="box flex bg-[url(/background.jpg)] bg-no-repeat bg-cover bg-center h-screen w-full">
         <div className="layer flex flex-col items-center lg:items-start md:items-center">
           <div className="logo">
             <img src="/logo.jpg" alt="" srcset="" className="w-10" />
@@ -24,7 +24,7 @@ function Signup() {
                 </h2>
                 <h3 className="text-gray-400 text-sm">
                   Already A member?{" "}
-                  <Link className="text-blue-500" to="/login">
+                  <Link className="text-indigo-500" to="/login">
                     Log in
                   </Link>
                 </h3>
@@ -42,7 +42,7 @@ function Signup() {
                 />
                 <Button
                   content="Create account"
-                  className="bg-blue-500 text-white text-nowrap font-normal"
+                  className="bg-indigo-500 text-white text-nowrap font-normal"
                 />
               </div>
               {/* <h3>Or connect with socials</h3>

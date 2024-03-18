@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function PassRec() {
   return (
     <>
-      <div className="box flex bg-[url(/background.jpg)] bg-no-repeat bg-cover bg-center h-screen">
+      <div className="box flex bg-[url(/background.jpg)] bg-no-repeat bg-cover bg-center h-screen w-full">
         <div className="layer flex flex-col items-center lg:items-start md:items-center">
           <div className="logo">
             <img src="/logo.jpg" alt="" srcset="" className="w-10" />

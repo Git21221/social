@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
 }
-#root{
+#root {
   display: flex;
+  /* background-color: rgb(38, 38, 38); */
 }

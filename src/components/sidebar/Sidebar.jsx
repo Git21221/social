@@ -10,12 +10,12 @@ import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 function Sidebar() {
   return (
     <>
-      <div className="sidebar h-screen w-min bg-blue-400 text-white p-8 flex flex-col justify-between">
+      <div className="sidebar h-screen w-min bg-indigo-500 text-white p-8 flex flex-col justify-between">
         <div className="topIcons flex flex-col gap-6">
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `${isActive ? "bg-white text-blue-400 p-3 rounded-2xl" : "text-white bg-blue-300 p-3 rounded-2xl"}`
+              `${isActive ? "bg-white text-indigo-400 p-3 rounded-2xl" : "text-white bg-indigo-300 p-3 rounded-2xl"}`
             }
           >
             <HomeOutlinedIcon />
@@ -23,7 +23,7 @@ function Sidebar() {
           <NavLink
             to="/events"
             className={({ isActive }) =>
-              `${isActive ? "bg-white text-blue-400 rounded-2xl p-3" : "text-white bg-blue-300 p-3 rounded-2xl"}`
+              `${isActive ? "bg-white text-indigo-400 rounded-2xl p-3" : "text-white bg-indigo-300 p-3 rounded-2xl"}`
             }
           >
             <CalendarMonthIcon />
@@ -31,7 +31,7 @@ function Sidebar() {
           <NavLink
             to="/messages"
             className={({ isActive }) =>
-              `${isActive ? "bg-white text-blue-400 rounded-2xl p-3" : "text-white bg-blue-300 p-3 rounded-2xl"}`
+              `${isActive ? "bg-white text-indigo-400 rounded-2xl p-3" : "text-white bg-indigo-300 p-3 rounded-2xl"}`
             }
           >
             <MailOutlineIcon />
@@ -39,7 +39,7 @@ function Sidebar() {
           <NavLink
             to="/profile"
             className={({ isActive }) =>
-              `${isActive ? "bg-white text-blue-400 rounded-2xl p-3" : "text-white bg-blue-300 p-3 rounded-2xl"}`
+              `${isActive ? "bg-white text-indigo-400 rounded-2xl p-3" : "text-white bg-indigo-300 p-3 rounded-2xl"}`
             }
           >
           <PersonOutlineOutlinedIcon />
@@ -47,7 +47,7 @@ function Sidebar() {
           <NavLink
             to="/settings"
             className={({ isActive }) =>
-              `${isActive ? "bg-white text-blue-400 rounded-2xl p-3" : "text-white bg-blue-300 p-3 rounded-2xl"}`
+              `${isActive ? "bg-white text-indigo-400 rounded-2xl p-3" : "text-white bg-indigo-300 p-3 rounded-2xl"}`
             }
           >
           <SettingsOutlinedIcon />
