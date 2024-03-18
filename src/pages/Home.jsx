@@ -3,15 +3,7 @@ import { Link } from "react-router-dom";
 import Button from "../components/button/Button.jsx";
 import Input from "../components/Input/Input.jsx";
 
-const Home = () => {
-  return (
-    <div className="dhiwise-navigation">
-      <h1>Homepage</h1>
-      <Button content="Submit" className="text-white bg-violet-500 rounded-md" />
-      <Input placeholder="Enter your name" type="text" />
-      <Link to='/login'>Login</Link>
-      <Link to='/signup'>signup</Link>
-      {/* <ul>
+{/* <ul>
         <li>
           <Link to="/login">Login</Link>
         </li>
@@ -19,10 +11,10 @@ const Home = () => {
           <Link to="/signup">Signup</Link>
         </li>
         <li>
-          <Link to="/passwordrecovery">PasswordRecovery</Link>
+          <Link to="/forget-password">Password Recovery</Link>
         </li>
         <li>
-          <Link to="/home1">Home1</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
           <Link to="/stories">Stories</Link>
@@ -82,6 +74,11 @@ const Home = () => {
           <Link to="/settings">Settings</Link>
         </li>
       </ul> */}
+
+const Home = () => {
+  return (
+    <div className="homepage">
+      Hello
     </div>
   );
 };
