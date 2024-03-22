@@ -1,142 +1,120 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/button/Button.jsx";
 import Input from "../components/Input/Input.jsx";
-
-{
-  /* <ul>
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
-        <li>
-          <Link to="/signup">Signup</Link>
-        </li>
-        <li>
-          <Link to="/forget-password">Password Recovery</Link>
-        </li>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/stories">Stories</Link>
-        </li>
-        <li>
-          <Link to="/singlestory">SingleStory</Link>
-        </li>
-        <li>
-          <Link to="/singlepost">SinglePost</Link>
-        </li>
-        <li>
-          <Link to="/singlevideo">SingleVideo</Link>
-        </li>
-        <li>
-          <Link to="/videofullscreen">VideoFullScreen</Link>
-        </li>
-        <li>
-          <Link to="/events">Events</Link>
-        </li>
-        <li>
-          <Link to="/singleevent">SingleEvent</Link>
-        </li>
-        <li>
-          <Link to="/searchresults">SearchResults</Link>
-        </li>
-        <li>
-          <Link to="/notifications">Notifications</Link>
-        </li>
-        <li>
-          <Link to="/messages">Messages</Link>
-        </li>
-        <li>
-          <Link to="/directmessage">DirectMessage</Link>
-        </li>
-        <li>
-          <Link to="/videochat">VideoChat</Link>
-        </li>
-        <li>
-          <Link to="/groupmessage">GroupMessage</Link>
-        </li>
-        <li>
-          <Link to="/myfriends">MyFriends</Link>
-        </li>
-        <li>
-          <Link to="/userprofile">UserProfile</Link>
-        </li>
-        <li>
-          <Link to="/gallery">Gallery</Link>
-        </li>
-        <li>
-          <Link to="/singlephoto">SinglePhoto</Link>
-        </li>
-        <li>
-          <Link to="/myprofile">MyProfile</Link>
-        </li>
-        <li>
-          <Link to="/settings">Settings</Link>
-        </li>
-      </ul> */
-}
+import SearchBar from "../components/searchbar/SearchBar.jsx";
+import PersonAddAlt1OutlinedIcon from "@mui/icons-material/PersonAddAlt1Outlined";
+import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
+import DownloadDoneRoundedIcon from "@mui/icons-material/DownloadDoneRounded";
 
 const Home = () => {
-  return (
-    <>
-      <div className="homepage flex flex-row flex-1 justify-around">
-        <div className="feed lg:max-w-[700px] md:max-w-[500px] bg-neutral-200  h-screen">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-          voluptas maxime sequi, adipisci saepe facilis similique, molestias ea
-          quos ducimus et cupiditate. Quasi, eum error. Ipsum temporibus
-          similique necessitatibus incidunt aut. Delectus vel deserunt tempora
-          sequi. Porro quibusdam, possimus ratione sed corrupti consectetur
-          atque quis dignissimos excepturi quidem soluta hic veritatis ullam
-          veniam? Aperiam voluptatum ab incidunt ducimus. Deleniti sequi sit,
-          dolore alias provident iure, ad voluptatum, dolores exercitationem
-          ipsam illo perferendis placeat distinctio eum. Commodi ea deleniti,
-          beatae libero debitis illo odit, id placeat doloremque error
-          reprehenderit dolorem numquam! Nisi placeat quae magni blanditiis
-          similique aliquid ut, esse architecto molestias commodi distinctio
-          dolorum atque aperiam exercitationem debitis quos fuga itaque ipsa,
-          provident nostrum. Nemo veritatis, quos recusandae accusamus minus
-          sequi officiis nesciunt inventore dignissimos quia rem ab provident
-          cupiditate vitae quas, pariatur totam! Quas explicabo perspiciatis
-          suscipit facere nostrum, cupiditate consectetur vero nam iste
-          molestiae tempore fugiat, doloribus neque sit incidunt voluptas itaque
-          numquam! Dicta, numquam! Cum impedit a nam aliquam iste? Ipsam aliquid
-          recusandae, minima assumenda unde quia reiciendis voluptas consectetur
-          illo illum labore explicabo non at. Reprehenderit commodi quas,
-          provident, natus tempore maxime necessitatibus dicta laborum atque
-          eaque in consequuntur consequatur perferendis error facilis quos!
-          Quaerat laboriosam amet a. Magnam impedit porro neque cum quod
-          quibusdam, fuga beatae. Officiis est hic itaque! Quis, doloremque,
-          libero ex aliquid, neque soluta sequi eligendi dolore vel dicta in
-          veniam voluptate.
+  const storyPeopleRef = useRef();
+  const [dragState, setDragState] = useState({
+    dragging: false,
+    dragStartX: 0,
+    scrollLeftStart: 0,
+  });
+
+  const repeatFollow = [],
+    repeatTopics = [];
+  for (let index = 0; index < 5; index++) {
+    repeatTopics.push(
+      <div key={index} className="topics flex justify-between items-center">
+        <div className="topicNameAndTrendNo flex items-center justify-center gap-4">
+          <div className="trendNo bg-emerald-500 h-10 w-10 rounded-xl flex justify-center items-center">
+            #1
+          </div>
+          <div className="topicName">Made in India</div>
+        </div>
+        <div className="tick bg-neutral-400 h-10 w-10 flex items-center justify-center rounded-xl">
+          <DownloadDoneRoundedIcon />
         </div>
       </div>
-      <div className="side lg:max-w-[400px] md:max-w-[300px] max-w-[200px] h-screen bg-slate-500">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-        dignissimos harum animi fugit, placeat rerum quo consectetur eius quam
-        incidunt deserunt ipsam dolorem odit a praesentium laboriosam et
-        perferendis. Corporis consectetur ducimus, rerum odit deserunt cum
-        voluptatibus ipsum animi minima porro voluptas doloribus facere
-        repudiandae possimus deleniti iusto impedit distinctio ipsam nulla ea!
-        Nisi, culpa iusto animi temporibus magni quo aliquid tempore,
-        perferendis beatae ea minus esse quaerat excepturi tempora explicabo
-        deserunt error illum. Nostrum reprehenderit quidem excepturi a nemo
-        mollitia rerum error, minima voluptatum odio aspernatur facilis animi
-        fugit corrupti aperiam illum. Dolore, soluta iure! Esse fugit suscipit
-        delectus nisi omnis aliquid repudiandae sunt laborum doloribus dolor!
-        Harum soluta aliquid sit? Id quod aut reprehenderit inventore nam hic,
-        tenetur consectetur esse veritatis nisi eum expedita velit fuga saepe
-        quidem dolor accusamus non quos neque laboriosam. Quo voluptatibus ad
-        facilis enim repellendus libero aut consectetur impedit qui saepe
-        inventore velit recusandae ratione ipsa, corrupti architecto iusto harum
-        iure eum eius ut fuga. Vel quasi, officiis ab quaerat cumque porro
-        tempore commodi nihil et, voluptas, rem laborum dolore autem voluptatum
-        necessitatibus inventore corporis sint facere? Vero nam dolore repellat?
-        Quasi eligendi quam voluptatibus cupiditate reiciendis repellat odio
-        velit nihil? Cum suscipit harum, debitis atque nemo eveniet. Quasi
-        nostrum minima eos sapiente, quia laudantium nisi natus quidem
-        accusantium molestiae ipsam hic dolorum perferendis dolore, autem iure
-        numquam dignissimos perspiciatis laborum quis? Ab!
+    );
+    repeatFollow.push(
+      <div key={index} className="followPeople flex items-center justify-between text-inherit">
+        <div className="people flex items-center gap-4">
+          <div className="image bg-neutral-400 w-10 h-10 rounded-xl"></div>
+          <div className="peopleNameAndDest">
+            <div className="peopleName">Saikat Das</div>
+            <div className="peopleDest text-xs font-thin">
+              West Bengal, Kolkata
+            </div>
+          </div>
+        </div>
+        <div className="addPeople bg-indigo-500 p-3 rounded-xl">
+          <PersonAddAlt1OutlinedIcon />
+        </div>
+      </div>
+    );
+  }
+
+  const handleDrag = (e) => {
+    if (!dragState.dragging) return;
+    const delta = e.clientX - dragState.dragStartX;
+    storyPeopleRef.current.scrollLeft = dragState.scrollLeftStart - delta;
+  };
+
+  const startDrag = (e) => {
+    setDragState({
+      dragging: true,
+      dragStartX: e.clientX,
+      scrollLeftStart: storyPeopleRef.current.scrollLeft,
+    });
+  };
+
+  const endDrag = () => {
+    setDragState({
+      ...dragState,
+      dragging: false,
+    });
+  };
+  return (
+    <>
+      <div className="homepage flex flex-row flex-1 justify-around pl-28">
+        <div className="feed w-full bg-neutral-200 h-screen">
+          <SearchBar />
+        </div>
+      </div>
+      <div className="side overflow-auto max-w-[300px] h-screen bg-stone-700 text-white flex flex-col gap-10 p-4">
+        <div className="people">
+          <div className="image h-10 w-12 rounded-xl bg-neutral-400"></div>
+        </div>
+        <div className="featuredStories flex flex-col gap-4">
+          <div className="heading text-lg">Featured Stories</div>
+          <div
+            className="featuredStories overflow-hidden"
+            ref={storyPeopleRef}
+            onMouseDown={startDrag}
+            onMouseMove={handleDrag}
+            onMouseUp={endDrag}
+            onMouseLeave={endDrag}
+          >
+            <div className="storyPeople inline-flex gap-4">
+              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
+              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
+              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
+              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
+              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
+              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
+              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
+              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
+              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
+              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
+            </div>
+          </div>
+        </div>
+        <div className="follow flex flex-col gap-4">
+          <div className="heading text-inherit text-lg">Who to Follow</div>
+          {repeatFollow}
+          <div className="more uppercase flex gap-1 items-center text-xs text-stone-400">
+            see more <KeyboardArrowRightRoundedIcon />
+          </div>
+        </div>
+        <div className="trendTopics flex flex-col gap-4">
+          <div className="heeading text-lg">Trend Topics</div>
+          {repeatTopics}
+        </div>
       </div>
     </>
   );

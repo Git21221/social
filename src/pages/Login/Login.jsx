@@ -30,9 +30,9 @@ function Login() {
                 </h3>
               </div>
               <p className="font-bold">Email</p>
-              <Input />
+              <Input className="focus:border focus:outline-none focus:border-[#6366F1]"/>
               <p className="font-bold">Password</p>
-              <Input type="password" />
+              <Input type="password" className="focus:border focus:outline-none focus:border-[#6366F1]"/>
               <div className="buttons flex gap-4 justify-between">
                 <Button
                   content="Change method"

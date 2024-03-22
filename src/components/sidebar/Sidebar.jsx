@@ -10,7 +10,7 @@ import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 function Sidebar() {
   return (
     <>
-      <div className="sidebar h-screen w-min bg-indigo-500 text-white p-8 flex flex-col justify-between">
+      <div className="sidebar fixed h-screen w-min bg-indigo-500 text-white p-8 flex flex-col justify-between">
         <div className="topIcons flex flex-col gap-6">
           <NavLink
             to="/"

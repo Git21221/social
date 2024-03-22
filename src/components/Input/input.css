@@ -1,7 +1,6 @@
 input {
   background-color: rgb(51, 62, 90);
-}
-input:focus {
-  outline: none;
-  border: 1px solid rgb(99 102 241);
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
 }
