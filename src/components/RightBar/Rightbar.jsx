@@ -7,7 +7,7 @@ import DownloadDoneRoundedIcon from "@mui/icons-material/DownloadDoneRounded";
 function Rightbar() {
   const storyPeopleRef = useRef();
 
-  const[isOpened, setIsOpened] = useState(false);
+  const [isOpened, setIsOpened] = useState(false);
 
   const [dragState, setDragState] = useState({
     dragging: false,
@@ -16,8 +16,9 @@ function Rightbar() {
   });
 
   const repeatFollow = [],
-    repeatTopics = [];
-  for (let index = 1; index <= 5; index++) {
+    repeatTopics = [],
+    repeatStory = [];
+  for (let index = 1; index <= 10; index++) {
     repeatTopics.push(
       <div key={index} className="topics flex justify-between items-center">
         <div className="topicNameAndTrendNo flex items-center justify-center gap-4">
@@ -50,6 +51,9 @@ function Rightbar() {
         </div>
       </div>
     );
+    repeatStory.push(
+      <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
+    );
   }
 
   function handleDrag(e) {
@@ -75,57 +79,51 @@ function Rightbar() {
   };
 
   const handleClick = (e) => {
-    setIsOpened(prev => !prev);
-  }
+    setIsOpened((prev) => !prev);
+  };
   return (
     <>
-    <div className="wraper">
-      <div className={`side overflow-auto max-w-[300px] h-screen bg-stone-700 text-white flex flex-col gap-10 p-4 ${isOpened ? 'custom' : ""}`}>
-      <div className={`bar ${isOpened? "will-change-transform" : ""}`} onClick={handleClick} />
-        <div className="people">
-          <div className="image h-10 w-10 rounded-xl bg-neutral-400"></div>
-        </div>
-        <div className="featuredStories flex flex-col gap-4">
-          <div className="heading text-lg">Featured Stories</div>
+      <div className="wraper">
+        <div
+          className={`side overflow-auto max-w-[300px] h-screen bg-stone-700 text-white flex flex-col gap-10 p-4 ${isOpened ? "custom" : ""}`}
+        >
           <div
-            className="featuredStories overflow-hidden"
-            ref={storyPeopleRef}
-            onMouseDown={startDrag}
-            onMouseMove={handleDrag}
-            onMouseUp={endDrag}
-            onMouseLeave={endDrag}
-            onTouchStart={startDrag}
-            onTouchMove={handleDrag}
-            onTouchEnd={endDrag}
-            onTouchCancel={endDrag}
-          >
-            <div className="storyPeople inline-flex gap-4">
-              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
-              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
-              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
-              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
-              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
-              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
-              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
-              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
-              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
-              <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
+            className={`bar ${isOpened ? "will-change-transform" : ""}`}
+            onClick={handleClick}
+          />
+          <div className="people">
+            <div className="image h-10 w-10 rounded-xl bg-neutral-400"></div>
+          </div>
+          <div className="featuredStories flex flex-col gap-4">
+            <div className="heading text-lg">Featured Stories</div>
+            <div
+              className="featuredStories overflow-hidden"
+              ref={storyPeopleRef}
+              onMouseDown={startDrag}
+              onMouseMove={handleDrag}
+              onMouseUp={endDrag}
+              onMouseLeave={endDrag}
+              onTouchStart={startDrag}
+              onTouchMove={handleDrag}
+              onTouchEnd={endDrag}
+              onTouchCancel={endDrag}
+            >
+              <div className="storyPeople inline-flex gap-4">{repeatStory}</div>
             </div>
           </div>
-        </div>
-        <div className="follow flex flex-col gap-4">
-          <div className="heading text-inherit text-lg">Who to Follow</div>
-          {repeatFollow}
-          <div className="more uppercase flex gap-1 items-center text-xs text-stone-400">
-            see more <KeyboardArrowRightRoundedIcon />
+          <div className="follow flex flex-col gap-4">
+            <div className="heading text-inherit text-lg">Who to Follow</div>
+            {repeatFollow}
+            <div className="more uppercase flex gap-1 items-center text-xs text-stone-400">
+              see more <KeyboardArrowRightRoundedIcon />
+            </div>
+          </div>
+          <div className="trendTopics flex flex-col gap-4">
+            <div className="heeading text-lg">Trend Topics</div>
+            {repeatTopics}
           </div>
         </div>
-        <div className="trendTopics flex flex-col gap-4">
-          <div className="heeading text-lg">Trend Topics</div>
-          {repeatTopics}
-        </div>
       </div>
-    </div>
     </>
   );
 }
