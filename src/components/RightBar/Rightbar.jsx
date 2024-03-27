@@ -7,7 +7,7 @@ import DownloadDoneRoundedIcon from "@mui/icons-material/DownloadDoneRounded";
 function Rightbar() {
   const storyPeopleRef = useRef();
 
-  const [isOpened, setIsOpened] = useState(false);
+  const [isOpened, setIsOpened] = useState(true);
 
   const [dragState, setDragState] = useState({
     dragging: false,
@@ -81,12 +81,13 @@ function Rightbar() {
   const handleClick = (e) => {
     setIsOpened((prev) => !prev);
   };
+  
   return (
     <>
       <div
-        className={`side lg:relative md:relative sm:fixed fixed right-0 overflow-auto w-[300px] h-screen bg-stone-700 text-white flex flex-col gap-10 p-4 ${isOpened ? "custom" : ""}`}
+        className={`side lg:relative md:relative sm:fixed fixed right-0 overflow-auto w-[300px] h-screen bg-stone-700 text-white flex flex-col gap-10 p-4 ${!isOpened ? "custom" : ""}`}
       >
-        <div className="bar" onClick={handleClick}></div>
+        <div className={`bar ${!isOpened ? "custom-bar" : ""}`} onClick={handleClick}></div>
         <div className="people">
           <div className="image h-10 w-10 rounded-xl bg-neutral-400"></div>
         </div>

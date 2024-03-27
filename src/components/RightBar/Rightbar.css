@@ -1,18 +1,21 @@
-.bar{
+.bar {
   position: fixed;
   height: 120px;
   width: 5px;
-  background-color: rgb(199, 199, 199);
+  background-color: rgb(68, 68, 68);
   border-radius: 9999px;
   top: 50%;
   transform: translateX(-30px);
 }
 
-.custom{
+.custom {
   width: 0;
   padding: 0;
   transition: 0.2s ease-in-out;
 }
-.side{
+.custom-bar {
+  transform: translateX(-20px);
+}
+.side {
   transition: 0.2s linear;
 }

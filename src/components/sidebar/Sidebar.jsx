@@ -53,8 +53,8 @@ function Sidebar() {
           <SettingsOutlinedIcon />
           </NavLink>
         </div>
-        <div className="bottomIcons">
-          <LogoutRoundedIcon />
+        <div className="bottomIcons flex items-center justify-center">
+          < LogoutRoundedIcon />
         </div>
       </div>
     </>

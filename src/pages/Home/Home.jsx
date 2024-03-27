@@ -6,6 +6,7 @@ import Input from "../../components/Input/Input.jsx";
 import SearchBar from "../../components/searchbar/SearchBar.jsx";
 import Rightbar from "../../components/RightBar/Rightbar.jsx";
 import './Home.css';
+import NewPost from "../../components/newPost/NewPost.jsx";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <div className="homepage flex flex-row flex-1 justify-around pl-28">
         <div className="feed w-full bg-neutral-200 h-screen">
           <SearchBar />
+          <NewPost />
         </div>
       </div>
       <Rightbar />
