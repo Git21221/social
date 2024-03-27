@@ -1,17 +1,18 @@
 .bar{
-  position: absolute;
+  position: fixed;
   height: 120px;
   width: 5px;
-  background-color: rgb(68, 68, 68);
+  background-color: rgb(199, 199, 199);
   border-radius: 9999px;
   top: 50%;
   transform: translateX(-30px);
 }
-.wraper{
-  transition: 0.7s linear;
-}
+
 .custom{
   width: 0;
   padding: 0;
-  transition: 0.7s linear;
+  transition: 0.2s ease-in-out;
+}
+.side{
+  transition: 0.2s linear;
 }
