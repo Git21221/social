@@ -1,14 +1,14 @@
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import Button from "../components/button/Button.jsx";
-import Input from "../components/Input/Input.jsx";
-import SearchBar from "../components/searchbar/SearchBar.jsx";
 import PersonAddAlt1OutlinedIcon from "@mui/icons-material/PersonAddAlt1Outlined";
 import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
+import "./Rightbar.css";
 import DownloadDoneRoundedIcon from "@mui/icons-material/DownloadDoneRounded";
 
-const Home = () => {
+function Rightbar() {
   const storyPeopleRef = useRef();
+
+  const[isOpened, setIsOpened] = useState(false);
+
   const [dragState, setDragState] = useState({
     dragging: false,
     dragStartX: 0,
@@ -17,12 +17,12 @@ const Home = () => {
 
   const repeatFollow = [],
     repeatTopics = [];
-  for (let index = 0; index < 5; index++) {
+  for (let index = 1; index <= 5; index++) {
     repeatTopics.push(
       <div key={index} className="topics flex justify-between items-center">
         <div className="topicNameAndTrendNo flex items-center justify-center gap-4">
           <div className="trendNo bg-emerald-500 h-10 w-10 rounded-xl flex justify-center items-center">
-            #1
+            #{index}
           </div>
           <div className="topicName">Made in India</div>
         </div>
@@ -32,7 +32,10 @@ const Home = () => {
       </div>
     );
     repeatFollow.push(
-      <div key={index} className="followPeople flex items-center justify-between text-inherit">
+      <div
+        key={index}
+        className="followPeople flex items-center justify-between text-inherit"
+      >
         <div className="people flex items-center gap-4">
           <div className="image bg-neutral-400 w-10 h-10 rounded-xl"></div>
           <div className="peopleNameAndDest">
@@ -49,11 +52,12 @@ const Home = () => {
     );
   }
 
-  const handleDrag = (e) => {
+  function handleDrag(e) {
     if (!dragState.dragging) return;
+    console.log("handleDrag");
     const delta = e.clientX - dragState.dragStartX;
     storyPeopleRef.current.scrollLeft = dragState.scrollLeftStart - delta;
-  };
+  }
 
   const startDrag = (e) => {
     setDragState({
@@ -69,16 +73,17 @@ const Home = () => {
       dragging: false,
     });
   };
+
+  const handleClick = (e) => {
+    setIsOpened(prev => !prev);
+  }
   return (
     <>
-      <div className="homepage flex flex-row flex-1 justify-around pl-28">
-        <div className="feed w-full bg-neutral-200 h-screen">
-          <SearchBar />
-        </div>
-      </div>
-      <div className="side overflow-auto max-w-[300px] h-screen bg-stone-700 text-white flex flex-col gap-10 p-4">
+    <div className="wraper">
+      <div className={`side overflow-auto max-w-[300px] h-screen bg-stone-700 text-white flex flex-col gap-10 p-4 ${isOpened ? 'custom' : ""}`}>
+      <div className={`bar ${isOpened? "will-change-transform" : ""}`} onClick={handleClick} />
         <div className="people">
-          <div className="image h-10 w-12 rounded-xl bg-neutral-400"></div>
+          <div className="image h-10 w-10 rounded-xl bg-neutral-400"></div>
         </div>
         <div className="featuredStories flex flex-col gap-4">
           <div className="heading text-lg">Featured Stories</div>
@@ -89,6 +94,10 @@ const Home = () => {
             onMouseMove={handleDrag}
             onMouseUp={endDrag}
             onMouseLeave={endDrag}
+            onTouchStart={startDrag}
+            onTouchMove={handleDrag}
+            onTouchEnd={endDrag}
+            onTouchCancel={endDrag}
           >
             <div className="storyPeople inline-flex gap-4">
               <div className="bg-neutral-400 w-10 h-10 rounded-xl"></div>
@@ -116,8 +125,9 @@ const Home = () => {
           {repeatTopics}
         </div>
       </div>
+    </div>
     </>
   );
-};
+}
 
-export default Home;
+export default Rightbar;
